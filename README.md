@@ -13,7 +13,7 @@ Welcome to the v-zhidu's note wiki!
 
 ## Spring
 
-* [Part IV. Testing](Testing)
+* [Part IV. Testing](docs/Sprint-Framework/Testing)
 
 
 
