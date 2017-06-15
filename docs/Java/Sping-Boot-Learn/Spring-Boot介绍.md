@@ -85,19 +85,19 @@ Spring Boot的主要目标是：
 </project>
 ```
 
-* `spring-boot-starter-parent`
+**`spring-boot-starter-parent`**
 
-> springboot官方推荐我们使用spring-boot-starter-parent，spring-boot-starter-parent包含了以下信息：
+* springboot官方推荐我们使用spring-boot-starter-parent，spring-boot-starter-parent包含了以下信息：
 
-> 1、使用java6编译级别
+* 1、使用java6编译级别
 
-> 2、使用utf-8编码
+* 2、使用utf-8编码
 
-> 3、实现了通用的测试框架 (JUnit, Hamcrest, Mockito).
+* 3、实现了通用的测试框架 (JUnit, Hamcrest, Mockito).
 
-> 4、智能资源过滤
+* 4、智能资源过滤
 
-> 5、智能的插件配置(exec plugin, surefire, Git commit ID, shade).
+* 5、智能的插件配置(exec plugin, surefire, Git commit ID, shade).
 
 ### 其它方式安装Spring Boot
 
@@ -107,5 +107,104 @@ Spring Boot的主要目标是：
 ## 第一个Spring Boot应用
 
 ### 在开始前，需要检查Maven和Java的版本是否可用
+![1.png](/docs/img/1.png)
 
-![1.png](../../img/1.png)
+### 项目结构
+
+```
+|--- {project-name}
+|   |--- src
+|       |--- main
+|           |--- java
+|               |--- {com.example.demo}
+|                   |--- controller
+|                       |--- HomeController.java
+|                   |--- Application.java
+|           |--- resources
+|       |--- test
+|           |--- java
+|               |--- {com.example.demo}
+|                   |--- ApplicationTests.java
+|--- .gitignore
+|--- README
+|--- pom.xml
+```
+
+**快速搭建项目结构**
+
+[https://start.spring.io/](https://start.spring.io/)
+
+![spring.start.io](/docs/img/2.png)
+
+### 添加代码
+
+#### 应用程序主入口
+
+```java
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@EnableAutoConfiguration
+public class DemoApplication {
+
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
+```
+
+#### 第一个接口
+
+在`controller`包下新建一个文件`HomeController.java`：
+
+```java
+// HomeController.java
+package com.example.demo.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * Created by v-zhidu on 2017/6/15.
+ */
+
+@RestController
+public class HomeController {
+
+    @RequestMapping("/")
+    public String home(){
+        return "Hello World !";
+    }
+}
+```
+
+启动应用，打开浏览器，访问`http://localhost:8080`
+
+> 可以通过添加`spring-boot-maven-plugin`依赖，通过`mvn package`命令打包应用，并以`java -jar demo-0.0.1-SNAPSHOT.jar`的方式启动应用。
+
+---
+
+## main方法
+
+查看Spring Boot应用程序启动的日志，分析启动时都做了哪些基本的工作
+
+![3](/docs/img/3.png)
+
+* Spring Boot入口`main`方法遵循Java对于一个应用程序入口点的规定。main方法通过调用`run`，将业务委托给Spring Boot的`SpringApplication`类。
+* `SpringApplication`将引导我们的应用，启动Spring。需要将`DemoApplication.class`作为组件传给`run`，以此告诉`SpringApplication`谁是主要的组件，并传递应用启动的所有命令行参数。
+* 尝试加载`profile`文件以及各种配置。
+* 相应的启动内嵌的Tomcat Web服务器，默认监听8080端口，加载`Servlet`类和相应的筛选器。
+* 扫描`Controller`并注册路由。
+* 监听端口的Http请求。
+
+## 关于一些注解的解释
+
+### @RestController 和 @RequestMapping
+
+### @EnableAutoConfiguration
+
+
