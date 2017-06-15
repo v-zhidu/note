@@ -1,4 +1,4 @@
-Welcome to the v-zhidu's note wiki!
+Welcome to the v-zhidu's note!
 
 
 # 目录
@@ -7,6 +7,6 @@ Welcome to the v-zhidu's note wiki!
 
 ### Spring-Boot
 
-* [1.Spring-Boot介绍](Java/Sping-Boot/1.Spring-Boot介绍)
+* [1.Spring-Boot官方文档学习笔记](Java/Sping-Boot-Learn/_index)
 
 
