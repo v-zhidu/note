@@ -107,7 +107,7 @@ Spring Boot的主要目标是：
 ## 第一个Spring Boot应用
 
 ### 在开始前，需要检查Maven和Java的版本是否可用
-![1.png](/docs/img/1.png)
+![1.png](/img/1.png)
 
 ### 项目结构
 
@@ -134,7 +134,7 @@ Spring Boot的主要目标是：
 
 [https://start.spring.io/](https://start.spring.io/)
 
-![spring.start.io](/docs/img/2.png)
+![spring.start.io](/img/2.png)
 
 ### 添加代码
 
@@ -192,7 +192,7 @@ public class HomeController {
 
 查看Spring Boot应用程序启动的日志，分析启动时都做了哪些基本的工作
 
-![3](/docs/img/3.png)
+![3](/img/3.png)
 
 * Spring Boot入口`main`方法遵循Java对于一个应用程序入口点的规定。main方法通过调用`run`，将业务委托给Spring Boot的`SpringApplication`类。
 * `SpringApplication`将引导我们的应用，启动Spring。需要将`DemoApplication.class`作为组件传给`run`，以此告诉`SpringApplication`谁是主要的组件，并传递应用启动的所有命令行参数。
