@@ -205,6 +205,14 @@ public class HomeController {
 
 ### @RestController 和 @RequestMapping
 
+**@RestController** - 被称为构造型（stereotype）注解，它为阅读的人提供暗示（这是一个支持REST的控制器），当Web请求进来时，Spring会考虑是否用它处理。
+
+**@RequestMapping** - 该注解提供路由信息。
+
+这两个注解是Spring MVC中的注解，不是Spring Boot的特定部分。
+
 ### @EnableAutoConfiguration
+
+这个注解告诉Spring Boot根据添加的jar依赖猜测你想如何配置Spring。由于`spring-boot-starter-web`添加了`Tomcat`和`Spring MVC`，所以`auto-configuration`将假定你正在开发一个web应用，并对Spring进行相应的设置。
 
 
