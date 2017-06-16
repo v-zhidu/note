@@ -1,6 +1,3 @@
-Welcome to the v-zhidu's note!
-
-
 # 目录
 
 ## Java
