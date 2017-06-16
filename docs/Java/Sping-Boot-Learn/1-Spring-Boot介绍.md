@@ -85,20 +85,6 @@ Spring Boot的主要目标是：
 </project>
 ```
 
-**`spring-boot-starter-parent`**
-
-* springboot官方推荐我们使用spring-boot-starter-parent，spring-boot-starter-parent包含了以下信息：
-
-* 1、使用java6编译级别
-
-* 2、使用utf-8编码
-
-* 3、实现了通用的测试框架 (JUnit, Hamcrest, Mockito).
-
-* 4、智能资源过滤
-
-* 5、智能的插件配置(exec plugin, surefire, Git commit ID, shade).
-
 ### 其它方式安装Spring Boot
 
 * Gradle安装
