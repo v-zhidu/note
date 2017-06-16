@@ -109,27 +109,6 @@ Spring Boot的主要目标是：
 ### 在开始前，需要检查Maven和Java的版本是否可用
 ![1.png](../../img/1.png)
 
-### 项目结构
-
-```
-|--- {project-name}
-|   |--- src
-|       |--- main
-|           |--- java
-|               |--- {com.example.demo}
-|                   |--- controller
-|                       |--- HomeController.java
-|                   |--- Application.java
-|           |--- resources
-|       |--- test
-|           |--- java
-|               |--- {com.example.demo}
-|                   |--- ApplicationTests.java
-|--- .gitignore
-|--- README
-|--- pom.xml
-```
-
 **快速搭建项目结构**
 
 [https://start.spring.io/](https://start.spring.io/)
