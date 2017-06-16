@@ -1,0 +1,5 @@
+@import "{{ site.theme }}";
+html {
+    background: #F8F8F9;
+    /*background: #6C7989 linear_gradient(#6C7989, #434B55) fixed;*/
+}
